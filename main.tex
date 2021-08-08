@@ -1,16 +1,71 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 
-\title{Thesis outline, errata, and comments}
+\usepackage{amsmath,amssymb,bm,colonequals}
+\usepackage{hyperref}
+
+\title{Thesis outline}
+% \title{Thesis outline, errata, and comments}
 \author{Victor Wang}
-\date{\today}
+% \author{Victor Wang \\
+% \href{mailto:vywang@math.princeton.edu}{\nolinkurl{vywang@math.princeton.edu}}}
+\date{}
+% \date{\today}
 
 \begin{document}
 
 \maketitle
 
-\section{Thesis outline}
+% \section{Thesis outline}
 
-\section{Papers~I--III: Errata and comments}
+% Let $F(\bm{x})\colonequals x_1^3+x_2^3+\cdots+x_6^3$.
+% Let $N(X)\colonequals \#\{\bm{x}\in [-X,X]^6: x_1^3+x_2^3+\cdots+x_6^3 = 0\}$.
+For $n,X\in \mathbb{Z}_{\geq0}$,
+let $r_3(n)\colonequals \#\{x,y,z\in \mathbb{Z}_{\geq0}: x^3+y^3+z^3=n\}$ and $M_2(X)\colonequals \sum_{a\leq X^{1/3}}r_3(a)^2$.
+% Hua (1938) proved $N_F(X)\ll_\epsilon X^{7/2+\epsilon}$ unconditionally;
+% lowering $7/2$ remains an open problem today.
+Conditionally on Langlands-type hypotheses and GRH (for certain Hasse--Weil $L$-functions),
+Hooley (1997) and Heath-Brown (1998) proved $M_2(X)\ll_\epsilon X^{3+\epsilon}$.
+% up to $\epsilon$, this is the best possible bound.
+Furthermore,
+Hooley (1986) conjectured $M_2(X)\sim c_{\textnormal{HLH}}X^3$ (as $X\to\infty$) for a specific constant $c_{\textnormal{HLH}}\in \mathbb{R}_{>0}$,
+which is \emph{strictly greater} than the Hardy--Littlewood constant $c_{\textnormal{HL}}\in \mathbb{R}_{>0}$.
+
+My thesis consists of three parts:
+\begin{enumerate}
+    \item Paper~I:
+    \emph{Diagonal cubic forms and the large sieve}
+    (42 pages).
+    
+    This shows that Hooley's (and Heath-Brown's) hypotheses can be replaced with
+    a large sieve hypothesis a la Bombieri--Vinogradov.
+    
+    \item Paper~II:
+    \emph{Isolating special solutions in the delta method:
+    The case of a diagonal cubic equation in evenly many variables over $\mathbb{Q}$}
+    (34 pages).
+    
+    Heath-Brown's work, and morally also Hooley's work, is based on the ``delta method'' for $M_2(X)$.
+    One can easily ``extract'' $c_{\textnormal{HL}}X^3$ from the delta method.
+    Paper~II extracts $(c_{\textnormal{HLH}}-c_{\textnormal{HL}})X^3$ in a natural way.
+    
+    \item Paper~III:
+    \emph{Approaching cubic Diophantine statistics via mean-value $L$-function conjectures of Random Matrix Theory type}
+    (136 pages).
+    
+    Building on Paper~II,
+    we prove (i) a general form of Hooley's conjecture,
+    and (ii) that $100\%$ of integers are sums of three cubes,
+    all conditionally on certain standard conjectures---the main additions (relative to Hooley and Heath-Brown) being conjectures of Random Matrix Theory and Square-free Sieve type.
+    To reduce Hooley's conjecture to standard conjectures,
+    we prove several new \emph{unconditional} ingredients.
+    % Paper~III is long because there are many distinct ``sources of $\epsilon$'' in the works of Hooley and Heath-Brown.
+    For example, certain complete exponential sums ``fail square-root cancellation'' quite badly---and thus do not fall under standard conjectural frameworks---and we prove new results that help to ``control'' such behavior.
+\end{enumerate}
+
+% \section{Papers~I--III: Errata and comments}
+
+% Questions, comments, corrections, and suggestions are all welcome.
+% The web address \href{https://tinyurl.com/hooley33}{\nolinkurl{tinyurl.com/hooley33}} will always contain the latest version of this document.
 
 \end{document}
