@@ -1,0 +1,338 @@
+\ProvidesPackage{vywang}[2021/08/08 v1.6 My own macros]
+%https://tex.stackexchange.com/questions/11890/where-to-put-a-custom-macros-file
+
+%2019/10/01 v5: \ls, \gs, \Br, \Az, \et, \tors; 10/05: \smallpsum, \psum; 10/11: \pprod, \pmax, \pmin, \psup, \pinf; 10/12: disabled \ch (use \vee instead)
+\newcommand{\ls}{\lesssim}
+\newcommand{\gs}{\gtrsim}
+\newcommand{\Br}{\operatorname{Br}} %Brauer group
+\newcommand{\Az}{\operatorname{Az}} %Azumaya
+\newcommand{\et}{\operatorname{et}}
+\newcommand{\tors}{\operatorname{tors}}
+\newcommand\smallpsum{\mathop{{\sum\nolimits^{\mathrlap{\prime}}}}}
+%https://tex.stackexchange.com/questions/455827/formatting-of-a-star-in-the-right-upper-corner-of-a-product-symbol
+\newcommand{\psum}{\sideset{}{^\prime}\sum}
+%https://www.tutorialspoint.com/tex_commands/sideset.htm
+%https://tex.stackexchange.com/questions/29690/how-to-type-primed-sum
+\newcommand\smallpprod{\mathop{{\prod\nolimits^{\mathrlap{\prime}}}}}
+\newcommand{\pprod}{\sideset{}{^\prime}\prod}
+\newcommand\smallpmax{\mathop{{\max\nolimits^{\mathrlap{\prime}}}}}
+\newcommand{\pmax}{\sideset{}{^\prime}\max}
+\newcommand\smallpmin{\mathop{{\min\nolimits^{\mathrlap{\prime}}}}}
+\newcommand{\pmin}{\sideset{}{^\prime}\min}
+\newcommand\smallpsup{\mathop{{\sup\nolimits^{\mathrlap{\prime}}}}}
+\newcommand{\psup}{\sideset{}{^\prime}\sup}
+\newcommand\smallpinf{\mathop{{\inf\nolimits^{\mathrlap{\prime}}}}}
+\newcommand{\pinf}{\sideset{}{^\prime}\inf}
+
+%2018/06/12 v4: fixed amsthm environments for question, problem, exercise
+%http://mirror.las.iastate.edu/tex-archive/macros/latex/required/amscls/doc/amsthdoc.pdf
+%Plain: Theorem, Lemma, Corollary, Proposition, Conjecture, Criterion, Assertion
+\theoremstyle{plain}% default
+
+\newtheorem{sidethm}{Side Theorem}[section]
+\newtheorem{sidelem}[sidethm]{Side Lemma}
+\newtheorem{sideprop}[sidethm]{Side Proposition}
+\newtheorem{sidecor}[sidethm]{Side Corollary}
+\newtheorem{sideconj}[sidethm]{Side Conjecture}
+
+\newcommand{\pf}[1]{\begin{proof}#1 \end{proof}}
+
+\newtheorem{theorem}{Theorem}[section] %start new section counter
+\newcommand{\thm}[1]{\begin{theorem}#1 \end{theorem}}
+
+\newtheorem{theorem-definition}[theorem]{Theorem-Definition} %share with theorem counter
+\newcommand{\thmdefn}[1]{\begin{theorem-definition}#1 \end{theorem-definition}}
+
+\newtheorem{lemma}[theorem]{Lemma} %share with theorem counter
+\newcommand{\lem}[1]{\begin{lemma}#1 \end{lemma}}
+
+\newtheorem{lemma-definition}[theorem]{Lemma-Definition} %share with theorem counter
+\newcommand{\lemdefn}[1]{\begin{lemma-definition}#1 \end{lemma-definition}}
+
+\newtheorem{proposition}[theorem]{Proposition} %share with theorem counter
+\newcommand{\prop}[1]{\begin{proposition}#1 \end{proposition}}
+
+\newtheorem{proposition-definition}[theorem]{Proposition-Definition} %share with theorem counter
+\newcommand{\propdefn}[1]{\begin{proposition-definition}#1 \end{proposition-definition}}
+
+\newtheorem{corollary}[theorem]{Corollary} %share with theorem counter
+\newcommand{\cor}[1]{\begin{corollary}#1 \end{corollary}}
+
+\newtheorem{corollary-definition}[theorem]{Corollary-Definition} %share with theorem counter
+\newcommand{\cordefn}[1]{\begin{corollary-definition}#1 \end{corollary-definition}}
+
+\newtheorem{fact}[theorem]{Fact}
+%like assertion?
+
+\newtheorem{conjecture}[theorem]{Conjecture} %share with theorem counter
+\newcommand{\cnj}[1]{\begin{conjecture}#1 \end{conjecture}}
+
+
+
+
+\theoremstyle{definition}
+%Definition, Condition, Problem, Example, Exercise, Algorithm, Question, Axiom, Property, Assumption, Hypothesis
+
+\newtheorem{sidedef}[sidethm]{Side Definition}
+\newtheorem{sideex}[sidethm]{Side Example}
+\newtheorem{sideques}[sidethm]{Side Question}
+
+\newtheorem{definition}[theorem]{Definition} %share with theorem counter
+\newcommand{\defn}[1]{\begin{definition}#1 \end{definition}}
+
+\newtheorem{example}[theorem]{Example} %share with theorem counter
+\newcommand{\ex}[1]{\begin{example}#1 \end{example}}
+
+\newtheorem{exercise}[theorem]{Exercise} %share with theorem counter
+\newcommand{\exer}[1]{\begin{exercise}#1 \end{exercise}}
+
+\newtheorem{problem}[theorem]{Problem} %share with theorem counter
+\newcommand{\prob}[1]{\begin{problem}#1 \end{problem}}
+
+\newtheorem{question}[theorem]{Question} %share with theorem counter
+\newcommand{\ques}[1]{\begin{question}#1 \end{question}}
+
+
+\theoremstyle{remark}
+%Remark, Note, Notation, Claim, Summary, Acknowledgment, Case, Conclusion
+
+\newtheorem{sidermk}[sidethm]{Side Remark}
+
+\newtheorem{remark}[theorem]{Remark} %share with theorem counter
+\newcommand{\rmk}[1]{\begin{remark}#1 \end{remark}}
+
+\newtheorem{note}[theorem]{Note} %share with theorem counter
+%\newtheorem{comment}[theorem]{Comment} %share with theorem counter. Used by versions package somehow?
+\newtheorem{case}[theorem]{Case} %same as theorem counter, avoid using if possible.
+\newtheorem*{solution}{Solution} %similar to proof, but without automatic box...
+
+\newtheorem*{claim}{Claim} %share with theorem counter
+
+\newtheorem{observation}[theorem]{Observation} %share with theorem counter
+\newcommand{\obs}[1]{\begin{observation}#1 \end{observation}}
+
+
+
+
+%18.725 added
+\newcommand{\Bl}{\operatorname{Bl}} %blowup
+\newcommand{\Aff}{\mathbb{A}} %affine line, as \AA is reserved
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+% \newcommand{\ch}{\check}
+
+
+%added for 18.785
+
+\newcommand{\bd}{\mathbf}
+\newcommand{\bb}{\mathbb}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\EE}{\mathbb{E}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\GG}{\mathbb{G}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\OO}{\mathbb{O}}
+\newcommand{\RP}{\mathbb{RP}}
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\PP}{\mathbb{P}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\TT}{\mathbb{T}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\Zbar}{\overline{\ZZ}}
+\newcommand{\lcm}{\operatorname{lcm}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\codim}{\operatorname{codim}} %co-dimension codimension
+\newcommand{\Span}{\operatorname{Span}}
+\newcommand{\orb}{\operatorname{Orbit}}
+\newcommand{\stab}{\operatorname{Stab}}
+\newcommand{\ifff}{if and only if}
+\newcommand{\Wlog}{without loss of generality}
+\newcommand{\WLOG}{Without loss of generality}
+\newcommand{\biject}{\leftrightarrow}
+\newcommand{\res}{\overline}
+\newcommand{\conj}{\overline}
+\newcommand{\ord}{\operatorname{ord}}
+
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\bilin}[2]{\langle #1,#2 \rangle}
+\newcommand{\vbra}[1]{\langle #1 \rangle}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\card}[1]{\lvert #1 \rvert}
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+
+\newcommand{\eps}{\epsilon}
+
+\newcommand{\cl}{\operatorname{cl}}
+\newcommand{\inn}{\operatorname{int}}
+\newcommand{\diam}{\operatorname{diam}}
+
+%18.705
+\newcommand{\Frac}{\operatorname{Frac}} %fractional field
+\newcommand{\Idem}{\operatorname{Idem}} %set of idempotents
+\newcommand{\rad}{\operatorname{rad}} %Jacobson radical
+\newcommand{\nil}{\operatorname{nil}} %nil(R) nilradical $\sqrt{\vbra{0}}$.
+\newcommand{\Ann}{\operatorname{Ann}} %annihilator of an elelement or set in a module
+\newcommand{\Mor}{\operatorname{Mor}}
+\newcommand{\Map}{\operatorname{Map}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Tor}{\operatorname{Tor}}
+\newcommand{\Ext}{\operatorname{Ext}}
+\newcommand{\coker}{\operatorname{coker}} %cokernel
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Supp}{\operatorname{Supp}} %support of a module; primes of non-vanishing localization $M_p$; cf. analysis connotations of ``support''? functions on Spec? why localizations of modules in particular?
+\newcommand{\Ass}{\operatorname{Ass}} %associated primes
+\newcommand{\zdiv}{\operatorname{z.div}} %zerodivisors
+\newcommand{\inject}{\operatorname{\hookrightarrow}} %injective arrow
+\newcommand{\surject}{\operatorname{\twoheadrightarrow}} %surjective arrow
+
+
+%18.785
+\newcommand{\Tr}{\operatorname{Tr}} %norm and trace.
+\newcommand{\algcl}{\overline}
+\newcommand{\intcl}{\overline}
+\newcommand{\covol}{\operatorname{covol}} %covolume (geometry of numbers, lattices)
+\newcommand{\disc}{\operatorname{disc}} %discriminant of lattice
+\newcommand{\Disc}{\operatorname{Disc}} %discriminant of polynomial
+\newcommand{\Aut}{\operatorname{Aut}} %automorphism group
+\newcommand{\Gal}{\operatorname{Gal}} %Galois group (though $G$ usually suffices)
+\newcommand{\Pic}{\operatorname{Pic}} %Picard group
+\newcommand{\qchar}[2]{\left(\frac{#1}{#2}\right)} %legendre/jacobi/kronecker symbol
+\newcommand{\tqchar}[2]{(\frac{#1}{#2})} %tiny legendre/jacobi/kronecker symbol
+\newcommand{\Cl}{\operatorname{Cl}} %class group
+
+\newcommand{\Jac}{\operatorname{Jac}} %jacobian
+\newcommand{\fieldchar}{\operatorname{char}} %characteristic of a field
+\newcommand{\kchar}{\operatorname{char}} %characteristic of a field
+%https://tex.stackexchange.com/questions/255726/where-can-i-find-documentation-on-what-char-does
+
+\newcommand{\Sel}{\operatorname{Sel}} %Selmer
+
+
+%Tate-Shafarevich group?
+\DeclareFontFamily{U}{wncy}{}
+\DeclareFontShape{U}{wncy}{m}{n}{<->wncyr10}{}
+\DeclareSymbolFont{mcy}{U}{wncy}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathord}{mcy}{"58}
+
+
+%general
+\newcommand{\map}{\operatorname}
+\newcommand{\mscr}{\mathscr}
+\newcommand{\mcal}{\mathcal}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\mbf}{\mathbf}
+\newcommand{\ol}{\overline}
+\newcommand{\inmatrix}[1]{\left[\begin{smallmatrix} #1 \end{smallmatrix}\right]}
+\newcommand{\inmat}[1]{\left[\begin{smallmatrix} #1 \end{smallmatrix}\right]}
+\newcommand{\bigmatrix}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\bigmat}[1]{\begin{bmatrix} #1 \end{bmatrix}}
+\newcommand{\texpdf}{\texorpdfstring}
+\newcommand{\Mat}{\operatorname{Mat}}
+\newcommand{\GL}{\operatorname{GL}}
+\newcommand{\PGL}{\operatorname{PGL}}
+\newcommand{\SL}{\operatorname{SL}}
+\newcommand{\PSL}{\operatorname{PSL}}
+\newcommand{\Orth}{\operatorname{O}}
+\newcommand{\SO}{\operatorname{SO}}
+\newcommand{\U}{\operatorname{U}}
+\newcommand{\SU}{\operatorname{SU}}
+\newcommand{\ub}{\underbrace}
+\newcommand{\ubra}{\underbrace}
+\newcommand{\ubrace}{\underbrace}
+
+\newcommand{\xto}{\xrightarrow}
+\newcommand{\xfrom}{\xleftarrow}
+
+\newcommand{\dirlim}{\varinjlim} %direct limit (or inductive limit, intuitively injective limit)
+\newcommand{\invlim}{\varprojlim} %inverse or projective limit
+
+\newcommand{\defeq}{\colonequals} %colonequals
+\newcommand{\eqdef}{\equalscolon}
+\newcommand{\maps}{\colon}
+
+\newcommand{\mathdisp}[1]{\[#1 \]} %display math
+\newcommand{\mathd}[1]{\[#1 \]} %display math
+\newcommand{\mathalign}[1]{\begin{align*}#1 \end{align*}} %align environment
+\newcommand{\matha}[1]{\begin{align*}#1 \end{align*}} %align environment
+\newcommand{\eqn}[1]{\begin{equation}#1 \end{equation}} %(numbered) equation environment
+
+\newcommand{\Gr}{\operatorname{Gr}} %grading
+
+\newcommand{\belongs}{\subseteq}
+\newcommand{\contains}{\supseteq}
+\newcommand{\propersub}{\subsetneq}
+\newcommand{\propersup}{\supsetneq}
+
+\newcommand{\tb}{\textbf}
+\newcommand{\tbf}{\textbf}
+
+\newcommand{\set}[1]{\{#1\}} %set shortcut
+
+\newcommand{\grad}{\nabla}
+
+\newcommand{\change}{\Delta}
+
+\newcommand{\del}{\partial}
+\newcommand{\odel}{\overline{\partial}}
+%https://en.wikipedia.org/wiki/%E2%88%82
+
+
+%special people
+%\todo[inline]{Get the correct accents for all the names; use macros if helpful. R\'{e}dei. Gasch\"{u}tz. Fr\"{o}hlich. Furtw\"{a}ngler.}
+\RequirePackage{xspace}
+\newcommand{\Poincare}{Poincar\'{e}\xspace}
+\newcommand{\adele}{ad\`{e}le\xspace}
+\newcommand{\Cech}{\v{C}ech\xspace}
+\newcommand{\Erdos}{Erd\H{o}s\xspace}
+\newcommand{\etale}{\'{e}tale\xspace}
+\newcommand{\Redei}{R\'{e}dei\xspace}
+\newcommand{\Gaschutz}{Gasch\"{u}tz\xspace}
+\newcommand{\Frohlich}{Fr\"{o}hlich\xspace}
+\newcommand{\Frolicher}{Fr\"{o}licher\xspace}
+\newcommand{\Furtwangler}{Furtw\"{a}ngler\xspace}
+\newcommand{\Bezout}{B\'{e}zout\xspace}
+\newcommand{\Kahler}{K\"{a}hler\xspace}
+\newcommand{\Godel}{G\"{o}del\xspace}
+\newcommand{\Mobius}{M\"{o}bius\xspace}
+\newcommand{\Neron}{N\'{e}ron\xspace}
+\newcommand{\Rouche}{Rouch\'{e}\xspace}
+\newcommand{\Plucker}{Pl\"{u}cker\xspace}
+\newcommand{\Prufer}{Pr\"{u}fer\xspace}
+
+\newcommand{\Polya}{P\'{o}lya\xspace}
+\newcommand{\Szemeredi}{Szemer\'{e}di\xspace}
+\newcommand{\Turan}{Tur\'{a}n\xspace}
+
+%https://en.wikipedia.org/wiki/List_of_mathematicians_born_in_the_19th_century
+\newcommand{\Holder}{H\"{o}lder\xspace}
+\newcommand{\Lindelof}{Lindel\"{o}f\xspace}
+\newcommand{\Frechet}{Fr\'{e}chet\xspace}
+\newcommand{\Fejer}{Fej\'{e}r\xspace}
+\newcommand{\Sierpinski}{Sierpi\'{n}ski\xspace}
+\newcommand{\Phragmen}{Phragm\'{e}n\xspace}
+
+%https://en.wikipedia.org/wiki/List_of_Greek_mathematicians
+\newcommand{\Apery}{Ap\'{e}ry\xspace}
+\newcommand{\Caratheodory}{Carath\'{e}odory\xspace}
+
+
+%https://en.wikipedia.org/wiki/List_of_Hungarian_mathematicians
+\newcommand{\Bollobas}{Bollob\'{a}s\xspace}
+\newcommand{\Gyarfas}{Gy\'{a}rf\'{a}s\xspace}
+\newcommand{\Komlos}{Koml\'{o}s\xspace}
+\newcommand{\Konig}{K\"{o}nig\xspace}
+\newcommand{\Lovasz}{Lov\'{a}sz\xspace}
+\newcommand{\Posa}{P\'{o}sa\xspace}
+\newcommand{\Rado}{Rad\'{o}\xspace}
+\newcommand{\Renyi}{R\'{e}nyi\xspace}
+\newcommand{\Sos}{S\'{o}s\xspace}
+\newcommand{\Suranyi}{Sur\'{a}nyi\xspace}
+\newcommand{\Szabo}{Szab\'{o}\xspace}

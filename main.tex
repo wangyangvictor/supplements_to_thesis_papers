@@ -1,22 +1,26 @@
 \documentclass[12pt]{article}
-\usepackage[utf8]{inputenc}
 
-\usepackage{amsmath,amssymb,bm,colonequals}
+\usepackage{amsmath,amssymb,amsthm,bm,colonequals,microtype}
+\usepackage{vywang}
 \usepackage{hyperref}
 
-\title{Thesis outline}
-% \title{Thesis outline, errata, and comments}
-\author{Victor Wang}
-% \author{Victor Wang \\
-% \href{mailto:vywang@math.princeton.edu}{\nolinkurl{vywang@math.princeton.edu}}}
-\date{}
-% \date{\today}
+% \title{Thesis outline}
+\title{Thesis outline, errata, and comments\thanks{The link \href{https://tinyurl.com/hooley33}{\nolinkurl{tinyurl.com/hooley33}} will always point to the latest version of this document.}}
+% \thanks{See \href{https://tinyurl.com/hooley33}{\nolinkurl{tinyurl.com/hooley33}} for the latest version of this document.}}
+% \author{Victor Wang}
+\author{Victor Wang\thanks{\emph{Email address}: \href{mailto:vywang@math.princeton.edu}{\nolinkurl{vywang@math.princeton.edu}}}}
+% \date{}
+\date{\today}
 
 \begin{document}
 
 \maketitle
+\tableofcontents
 
-% \section{Thesis outline}
+\section{Thesis outline}
+
+(The page \href{https://wangyangvictor.github.io/thesis_links.html}{\nolinkurl{wangyangvictor.github.io/thesis_links.html}} has links to all relevant papers and drafts.
+Questions, comments, corrections, and suggestions are all welcome.)
 
 % Let $F(\bm{x})\colonequals x_1^3+x_2^3+\cdots+x_6^3$.
 % Let $N(X)\colonequals \#\{\bm{x}\in [-X,X]^6: x_1^3+x_2^3+\cdots+x_6^3 = 0\}$.
@@ -57,7 +61,7 @@ My thesis consists of three parts:
     we prove (i) a general localized form of Hooley's conjecture
     and (ii) that asymptotically $100\%$ of integers $a\not\equiv \pm4\bmod{9}$ are sums of three cubes,
     conditionally on some standard number theory conjectures---the main additions (relative to Hooley and Heath-Brown) being conjectures of Random Matrix Theory and Square-free Sieve type.
-    To reduce Hooley's conjecture to these conjectures,
+    To reduce (i) to these conjectures,
     we introduce several new \emph{unconditional} ingredients.
     % Paper~III is long because there are many distinct ``sources of $\epsilon$'' in the works of Hooley and Heath-Brown.
     For example, certain complete exponential sums ``fail square-root cancellation'' quite badly---and thus do not fall under ``standard'' conjectural frameworks---and we prove new results that help to control such behavior.
@@ -65,9 +69,166 @@ My thesis consists of three parts:
 
 (Thanks to Nick Katz for helpful suggestions on wording.)
 
-% \section{Papers~I--III: Errata and comments}
+\section{Papers~I--III: Errata and comments}
 
-% Questions, comments, corrections, and suggestions are all welcome.
-% The web address \href{https://tinyurl.com/hooley33}{\nolinkurl{tinyurl.com/hooley33}} will always contain the latest version of this document.
+For now, all errata and comments refer to the versions of August 7, 2021:
+\begin{enumerate}
+    \item \href{https://arxiv.org/abs/2108.03395v1}{\texttt{arXiv:2108.03395v1}} for I,
+    
+    \item \href{https://arxiv.org/abs/2108.03396v1}{\texttt{arXiv:2108.03396v1}} for II,
+    and
+    
+    \item \href{https://arxiv.org/abs/2108.03398v1}{\texttt{arXiv:2108.03398v1}} for III.
+\end{enumerate}
+Thanks below are given in parentheses.
+
+\subsection{Paper~I (\href{https://arxiv.org/abs/2108.03395v1}{\texttt{arXiv:2108.03395v1}})}
+
+\begin{itemize}
+    \item Paragraph before Definition~I.1.11:
+    This is OK,
+    but it would be more canonical to say ``if $\bm{c}\in \ZZ^m$ and $p\nmid F^\vee(\bm{c})$, then $(\mcal{V}_{\bm{c}})_{\FF_p}$ is a smooth complete intersection in $\PP^{m-1}_{\FF_p}$ of dimension $m_\ast$ and multi-degree $(3,1)$''.
+    
+    \item Definition~I.1.11:
+    ``$\dim H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'' should be ``$\rank H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$''.
+    % https://mathoverflow.net/questions/186378/when-did-betti-cohomology-come-to-be-used-the-way-it-is-today-and-how-is-it
+    
+    \item After Definition~I.1.11:
+    % Add a remark that ``in Definition~I.1.11, we use the embedding $V_{\bm{c}}\belongs \PP^{m-1}_\QQ$ to define $H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$''.
+    Add a remark that
+    (i) ``for each $\bm{c}$ above,
+    $V_{\bm{c}}$ is a \emph{subvariety} of $\PP^{m-1}_\QQ$ by definition,
+    so $H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$ is well-defined'';
+    and (ii) ``each $L_p(s,V_{\bm{c}})$ above is well-defined:
+    for any $\bm{c},\bm{c}'\in \ZZ^m$ with $V_{\bm{c}}=V_{\bm{c}'}$,
+    one can show that $E_{\bm{c}}(q) = E_{\bm{c}'}(q)$ holds for all prime powers $q$ coprime to $F^\vee(\bm{c})F^\vee(\bm{c}')$''.
+    % Fancy proof in (ii): smooth proper base change; elementary proof: compare homogeneous ideals to show that $\bm{c}\in \QQ^\times \bm{c}'$, and then use the coprimality condition to show that $\bm{c}\in \ZZ_p^\times \bm{c}'$.
+    
+    (To avoid discussing (i)--(ii),
+    we could write $-\bm{1}_{2\mid m_\ast} + \rank H^{m_\ast}(V_{\bm{c}}\times\CC)$ in place of $\rank H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$,
+    and $L_p(s,\bm{c})$ in place of $L_p(s,V_{\bm{c}})$.
+    But the current notation is more transparent and suggestive.)
+    
+    % \item On interpolation being the only known method for Hua bound:
+    % understand Vaughan's work better... (read Vaughan 1986 and 2020).
+\end{itemize}
+
+% \subsection{Paper~II (\href{https://arxiv.org/abs/2108.03396v1}{\texttt{arXiv:2108.03396v1}})}
+
+\subsection{Paper~III (\href{https://arxiv.org/abs/2108.03398v1}{\texttt{arXiv:2108.03398v1}})}
+
+\begin{itemize}
+    \item Paragraph after Remark~III.1.9:
+    Remove ``essentially''.
+    % from ``essentially suggests''.
+    (Sarnak)
+    
+    \item Definition~III.3.8:
+    Replace ``Also let'' with ``And for each prime $p$, let''.
+    Write ``$\map{diff}$'' instead of ``$\map{prim}$'',
+    to avoid conflict with the usual definition of $H^\bullet_{\map{prim}}$.
+    Also (for convenience), generalize ``$H^d(\PP^{1+d})$'' and ``\emph{hypersurface} $W/\QQ$ of dimension $d\geq 0$''
+    to ``$H^d(\PP^{r+d})$'' and ``\emph{complete intersection} $W/\QQ$ of dimension $d\geq 0$ and codimension $r\geq 1$''.
+    
+    Then modify the following accordingly:
+    \begin{itemize}
+        \item Remark~3.10,
+        Definition~3.11,
+        Conjecture~3.18,
+        Observation~3.21,
+        paragraph after Observation~4.2,
+        point~(2) on p.~73 (before Remark~A.4),
+        and Remark~A.11(2).
+        % remove ``M_c\cong'' and say ``(which is isomorphic to M_c)''
+    \end{itemize}
+    
+    
+    \item Definition~III.3.11:
+    Add ``And for all $p,j$, let $\tilde{\alpha}_{\bm{c},j}(p)\defeq \tilde{\alpha}_{M,j}(p)$, where $M\defeq H^{m_\ast}_{\map{prim}}(V_{\bm{c}})$''.
+    
+    \item \S{III.4.1}:
+    Replace ``Definition~3.8'' (both times) with ``Definition~3.11''.
+    
+    \item Definition~III.C.2:
+    Add ``projective'' before ``variety $Y/k$'',
+    so that Remark~C.3 holds as written.
+    % More generally, one could instead replace $H^\bullet$ (in C.2 and C.3) with $H_{c}^\bullet$.
+    % Also, add ``embedded'' before ``projective variety $X\belongs \PP^n_k$''.
+    (Katz)
+    
+    % \item Definitions~III.C.2 and~III.C.4, and proof of Observation~III.C.6:
+    % Replace ``error-relevant'' with ``non-planar'' (more accurate and transparent).
+    
+    % \item Definition~III.C.4:
+    % For robustness,
+    % append ``, and hypersurface $Y\belongs \PP^n_{\FF_q}$ isomorphic to $X$ (as an abstract variety)'' to ``for every prime $\ell\nmid q$'',
+    % and replace ``$H^\bullet(X)$'' with ``$H^\bullet(Y)$''.
+    
+    % Then in C.4 and C.6, replace ``hypersurface $X\belongs \PP^n_{\FF_q}$'' with ``variety $X/\FF_q$ isomorphic to a hypersurface in $\PP^n_{\FF_q}$''.
+    % And adjust the proof of C.6 accordingly.
+    
+    Also, the current notion of ``error-relevant'' is extrinsic (Katz),
+    would be better termed ``non-planar'',
+    and is not symmetric enough for us (given that $H^i(\PP^n_k)\to H^i(X)$, for $i\leq 2\dim{X}$, could presumably fail to be injective for some embedded projective variety $X\belongs \PP^n_k$).
+    
+    To resolve these issues robustly and cleanly,
+    \emph{append} ``, and for each $i\geq 0$, let $\mcal{E}^i(Y)$ denote the multiset of (geometric) Frobenius eigenvalues on $H^i(Y)$'' to the \emph{second} sentence of C.2,
+    and \emph{replace} the \emph{third} with
+    ``Now fix a projective variety $X/k$,
+    let $\mcal{E}^i_{\triangle}(X,\PP)\defeq (\mcal{E}^i(X)\cup \mcal{E}^i(\PP^{\dim X}))\setminus (\mcal{E}^i(X)\cap \mcal{E}^i(\PP^{\dim X}))$ for $i\geq 0$
+    (so that if $\alpha\in \ol{\QQ}_\ell$ has multiplicities $j,l$ in $\mcal{E}^i(X),\mcal{E}^i(\PP^{\dim X})$, then it has multiplicity $\abs{j-l}$ in $\mcal{E}^i_{\triangle}(X,\PP)$),
+    and let $\mcal{E}_{\triangle}(X,\PP)\defeq \bigsqcup_{i\geq 0}\mcal{E}^i_{\triangle}(X,\PP)$.''
+    Then do the following:
+    \begin{itemize}
+        \item In C.4,
+        replace ``all of the error-relevant Frobenius eigenvalues on $H^\bullet(X)$'' with ``all $\alpha\in \mcal{E}_{\triangle}(X,\PP)$''.
+        
+        \item In C.4 and C.6,
+        generalize ``projective hypersurface $X\belongs \PP^n_{\FF_q}$'' to ``projective complete intersection $X\belongs \PP^n_{\FF_q}$ with $\codim{X}\geq 1$''.
+        % (for convenience).
+        
+        \item In C.6:
+        To be safe, replace the ``$18(3+\deg{X})^{n+1}$'' in (1) with ``$18(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$''.
+        
+        (Then in Lemma~III.4.1, proof of (1),
+        replace ``$18(3+3)^{m-1}$'' with ``$72(3+6)^m$'';
+        in Problem~4.16,
+        ``$18(3+k)^s$'' with ``$72(3+2k)^s$'';
+        in 4.16 and 4.19,
+        ``$M_{d,m-1}$'' with ``$M_{d,m}$''.)
+        
+        \item In C.6 and its proof:
+        Replace ``$\PP^{n-1}(k_r)$'' (all three times) with ``$\PP^{\dim{X}}(k_r)$''.
+        
+        \item In C.6, proof that (2) implies (1):
+        Replace ``$(n,1,\deg{X})$'' with ``$(n,\codim{X},\norm{\bm{d}}_\infty)$,
+        if $X$ has multi-degree $\bm{d}\in \ZZ_{\geq 1}^{\codim{X}}$;
+        here $\norm{\bm{d}}_\infty\leq d_1\cdots d_{\codim{X}} = \deg{X}$''.
+        
+        And explicitly state the LTF and Betti bounds involved.
+        % And explicitly state that
+        % \mathd{
+        % \abs{\#X(k_r)-\#\PP^{\dim{X}}(k_r)}\leq \card{k_r}^{(\dim{X})/2}
+        % \cdot \sum_{i}\sum_{Y\in \set{X, \PP^{\dim{X}}}}\dim H_i(Y)
+        % }
+        % and $\sum_{i}\dim H_i(Y)\leq 9(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$ for all $Y\in \set{X, \PP^{\dim{X}}}$.
+        
+        \item In C.6, proof of equivalence of (2)--(3):
+        Replace ``the only error-relevant eigenvalues can come from\dots [through footnote~40]'' with ``$\mcal{E}^i_{\triangle}(X,\PP) = \emptyset$ for all $i\geq 2+\dim{X}$ [Hoo91b, Katz's Appendix, assertion~(2) in the proof of Theorem~1]''.
+        (Katz)
+        
+        And replace ``If $\dim{X}=1$\dots $\dim{X}\geq2$\dots \emph{with $\dim(\map{Sing}(X_{\ol{k}}))=0$}, so''
+        with ``Now assume $\dim{X}\geq 1$. Then the hypothesis $\dim(\map{Sing}(X_{\ol{k}}))=0$ implies that''.
+        
+        
+        \item In C.7:
+        % Clarify that $V_{\bm{c}}$ (viewed as a subvariety of $\PP^{m-1}$) has a canonical realization as a projective hypersurface (up to equivalence),
+        % depending only on $V_{\bm{c}}$.
+        % (This is because if $V(F,\bm{c}\cdot\bm{x}) = V(F,\bm{c}'\cdot\bm{x})$, then $[\bm{c}] = [\bm{c}']$.)
+        % Alternatively, just fix $\bm{c}$ and clarify that $\bm{c}$ determines a realization of $V_{\bm{c}}$ as a projective hypersurface (up to equivalence).
+        Replace ``after viewing $V_{\bm{c}}$ as a projective hypersurface\dots'' with ``since $V_{\bm{c}}$ is a complete intersection in $\PP^{m-1}_k$''.
+    \end{itemize}
+    
+\end{itemize}
 
 \end{document}
