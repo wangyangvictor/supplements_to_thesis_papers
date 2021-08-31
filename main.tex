@@ -85,6 +85,10 @@ Thanks below are given in parentheses.
 \subsection{Paper~I (\href{https://arxiv.org/abs/2108.03395v1}{\texttt{arXiv:2108.03395v1}})}
 
 \begin{itemize}
+    \item Paragraph after Definition~I.1.3:
+    It would be good to state Vaughan's record, of the form $N_F(X)\ll X^{7/2}/(\log{X})^c$.
+    (Wooley)
+    
     \item Paragraph before Definition~I.1.11:
     This is OK,
     but it would be more canonical to say ``if $\bm{c}\in \ZZ^m$ and $p\nmid F^\vee(\bm{c})$, then $(\mcal{V}_{\bm{c}})_{\FF_p}$ is a smooth complete intersection in $\PP^{m-1}_{\FF_p}$ of dimension $m_\ast$ and multi-degree $(3,1)$''.
@@ -131,17 +135,14 @@ Thanks below are given in parentheses.
     to ``$H^d(\PP^{r+d})$'' and ``\emph{complete intersection} $W/\QQ$ of dimension $d\geq 0$ and codimension $r\geq 1$''.
     
     Then modify the following accordingly:
-    \begin{itemize}
-        \item Remark~3.10,
-        Definition~3.11,
-        Conjecture~3.18,
-        Observation~3.21,
-        paragraph after Observation~4.2,
-        point~(2) on p.~73 (before Remark~A.4),
-        and Remark~A.11(2).
-        % remove ``M_c\cong'' and say ``(which is isomorphic to M_c)''
-    \end{itemize}
-    
+    Remark~3.10,
+    Definition~3.11,
+    Conjecture~3.18,
+    Observation~3.21,
+    paragraph after Observation~4.2,
+    point~(2) on p.~73 (before Remark~A.4),
+    and Remark~A.11(2).
+    % remove ``M_c\cong'' and say ``(which is isomorphic to M_c)''
     
     \item Definition~III.3.11:
     Add ``And for all $p,j$, let $\tilde{\alpha}_{\bm{c},j}(p)\defeq \tilde{\alpha}_{M,j}(p)$, where $M\defeq H^{m_\ast}_{\map{prim}}(V_{\bm{c}})$''.
@@ -175,17 +176,76 @@ Thanks below are given in parentheses.
     \emph{append} ``, and for each $i\geq 0$, let $\mcal{E}^i(Y)$ denote the multiset of (geometric) Frobenius eigenvalues on $H^i(Y)$'' to the \emph{second} sentence of C.2,
     and \emph{replace} the \emph{third} with
     ``Now fix a projective variety $X/k$,
-    let $\mcal{E}^i_{\triangle}(X,\PP)\defeq (\mcal{E}^i(X)\cup \mcal{E}^i(\PP^{\dim X}))\setminus (\mcal{E}^i(X)\cap \mcal{E}^i(\PP^{\dim X}))$ for $i\geq 0$
-    (so that if $\alpha\in \ol{\QQ}_\ell$ has multiplicities $j,l$ in $\mcal{E}^i(X),\mcal{E}^i(\PP^{\dim X})$, then it has multiplicity $\abs{j-l}$ in $\mcal{E}^i_{\triangle}(X,\PP)$),
+    let $\mcal{E}^i_{\triangle}(X,\PP)\defeq (\mcal{E}^i(X)\cup \mcal{E}^i(\PP^{\dim{X}}_k))\setminus (\mcal{E}^i(X)\cap \mcal{E}^i(\PP^{\dim{X}}_k))$ for $i\geq 0$
+    (so that if $\alpha\in \ol{\QQ}_\ell$ has multiplicities $j,l$ in $\mcal{E}^i(X),\mcal{E}^i(\PP^{\dim{X}}_k)$, then it has multiplicity $\abs{j-l}$ in $\mcal{E}^i_{\triangle}(X,\PP)$),
     and let $\mcal{E}_{\triangle}(X,\PP)\defeq \bigsqcup_{i\geq 0}\mcal{E}^i_{\triangle}(X,\PP)$.''
+    
+    Then right after C.3, add the following theorem (and proof sketch).
+    Below, we will refer to the theorem as ``Theorem~P''.
+    \theoremstyle{plain}
+    \newtheorem*{theorem*}{Theorem}
+    \begin{theorem*}
+    [Deligne, Katz, Skorobogatov, and Ghorpade--Lachaud]
+    \label{THM:general-perversity-result}
+    Let $k\defeq \FF_q$.
+    Fix integers $n,N\geq 1$,
+    and a complete intersection $X\belongs \PP^n_k$ with $\dim{X} = N$ and $\codim{X}\geq 1$.
+    Let $D\defeq \dim(\map{Sing}(X_{\ol{k}}))$, with the convention $\dim(\emptyset)\defeq -1$.
+    Then for $i\in \ZZ$, the following hold.
+    \begin{enumerate}
+        \item If $i\geq N+D+2$, then $\mcal{E}^i_{\triangle}(X,\PP) = \emptyset$.
+        
+        \item If $i = N+D+1$ and $2\mid i$, then $\set{q^{i/2}} = \mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$.
+    \end{enumerate}
+    \end{theorem*}
+    
+    % \rmk{
+    % By [\href{https://arxiv.org/abs/0808.2169v1}{\texttt{arXiv:0808.2169v1}}, Proposition~3.2], we also have
+    % (3) if $i = N$, then $\mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$;
+    % and (4) if $0\leq i\leq N-1$, then $\mcal{E}^i_{\triangle}(X,\PP) = \emptyset$.
+    % But we only need (1)--(2).
+    % }
+    
+    \pf{
+    [Proof sketch]
+    Claim~(1) follows from [Hoo91b, Katz's Appendix, assertion~(2) in the proof of Theorem~1].
+    And if $D = -1$, then (2) follows from weak Lefschetz.
+    Now assume $D\geq 0$, let $i\defeq N+D+1$, and suppose $2\mid i$.
+    Then $i\leq 2N$ by generic smoothness, so $\mcal{E}^i(\PP^{N}_k) = \set{q^{i/2}}$.
+    
+    It remains to show that $q^{i/2}\in \mcal{E}^i(X)$;
+    [\href{https://arxiv.org/abs/0808.2169v1}{\texttt{arXiv:0808.2169v1}}, first sentence of Remark~3.5] essentially states this without proof,\footnote{though (1), [Poo17, Corollary~7.5.21], and [\texttt{arXiv:0808.2169v1}, Theorem~2.4 or Skorobogatov (1992), after using a Veronese embedding]
+    might allow for a proof by induction on $\codim{X}$,
+    % (using the fact that $\dim\Sing$ decreases by at most $1$ for a hyperplane section (so that $\codim\Sing$ is weakly decreasing under taking hyperplane sections),
+    % and the fact that projective complete intersections with $\codim\Sing \geq 2$ are always irreducible;
+    % and in the case where $\codim\Sing = 1$, we can directly use [Poo17, Corollary~7.5.21] instead of inducting),
+    which the authors may have had in mind}
+    so it seems appropriate to sketch one.
+    Let $T\defeq \Aff^1_k$.
+    Following Katz (essentially), we can reduce to the case in which there exists
+    a closed subscheme $Z\belongs \PP^n_T$, flat over $T$, such that (i) $Z_0 = X$ and (ii) $Y\defeq Z_1$ is a smooth complete intersection in $\PP^n_k$ with $\dim{Y} = N$.
+    % Note: Clearly $Z/T$ is proper (since $Z$ is closed in $\PP^n_T$).
+    In this case, [SGA~7~I, Deligne's Expos\'{e}~I, Corollaire~4.3] implies that the specialization map $H^i(Z_t)\to H^i(Z\times_{T} \ol{k(T)}, \QQ_\ell)$ is an isomorphism at $t=1$ (since $D\geq 0$), and a surjection at $t=0$.
+    By $G_k$-equivariance, it follows that $\mcal{E}^i(Y)\belongs \mcal{E}^i(X)$.
+    But $i\geq N+1$ (since $D\geq 0$),
+    so $\mcal{E}^i(Y) = \mcal{E}^i(\PP^{N}_k)$ (by (1) for $Y$).
+    % (by weak Lefschetz and Poincar\'{e} duality).
+    Thus $\set{q^{i/2}} = \mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$, as desired.
+    }
+    
     Then do the following:
     \begin{itemize}
         \item In C.4,
         replace ``all of the error-relevant Frobenius eigenvalues on $H^\bullet(X)$'' with ``all $\alpha\in \mcal{E}_{\triangle}(X,\PP)$''.
-        
+    
         \item In C.4 and C.6,
         generalize ``projective hypersurface $X\belongs \PP^n_{\FF_q}$'' to ``projective complete intersection $X\belongs \PP^n_{\FF_q}$ with $\codim{X}\geq 1$''.
         % (for convenience).
+        
+        \item In C.6:
+        Convert ``$\dim(\map{Sing}(X_{\ol{k}}))=0$'' to ``$\dim(\map{Sing}(X_{\ol{k}}))\leq 0$''.
+        
+        (Then make corresponding changes elsewhere.)
         
         \item In C.6:
         To be safe, replace the ``$18(3+\deg{X})^{n+1}$'' in (1) with ``$18(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$''.
@@ -214,12 +274,21 @@ Thanks below are given in parentheses.
         % and $\sum_{i}\dim H_i(Y)\leq 9(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$ for all $Y\in \set{X, \PP^{\dim{X}}}$.
         
         \item In C.6, proof of equivalence of (2)--(3):
-        Replace ``the only error-relevant eigenvalues can come from\dots [through footnote~40]'' with ``$\mcal{E}^i_{\triangle}(X,\PP) = \emptyset$ for all $i\geq 2+\dim{X}$ [Hoo91b, Katz's Appendix, assertion~(2) in the proof of Theorem~1]''.
+        Replace ``the only error-relevant eigenvalues can come from\dots [through footnote~40]'' with ``the multiset $\set{\alpha\in \mcal{E}_{\triangle}(X,\PP): \map{weight}(\alpha)\geq 1+\dim{X}}$
+        is a sub-multiset of $\mcal{E}^{1+\dim{X}}(X)\setminus \mcal{E}^{1+\dim{X}}(\PP^{\dim{X}}_k)$ (by Theorem~P)''.
         (Katz)
         
         And replace ``If $\dim{X}=1$\dots $\dim{X}\geq2$\dots \emph{with $\dim(\map{Sing}(X_{\ol{k}}))=0$}, so''
-        with ``Now assume $\dim{X}\geq 1$. Then the hypothesis $\dim(\map{Sing}(X_{\ol{k}}))=0$ implies that''.
+        with ``Now assume $\dim{X}\geq 1$. Then the hypothesis $\dim(\map{Sing}(X_{\ol{k}}))\leq 0$ implies that''.
         
+        \item At the end of C.6:
+        Add the sentence ``Furthermore, (1)--(3) hold \emph{if} $\dim H^{1+\dim{X}}(X) = \dim H^{1+\dim{X}}(\PP^{\dim{X}}_k)$.''
+        For proof, use Theorem~P.
+        
+        Then in Appendix~C.1.1, proof of Proposition~C.9(2):
+        Replace ``$H^i(V_{\bm{c}})/H^i(\PP^{m-1}_k)\neq0$'' (both times)
+        with ``$\dim H^{1+m_\ast}(V_{\bm{c}})\neq \dim H^{1+m_\ast}(\PP^{m_\ast}_k)$'',
+        and justify this (the first time) using the new ``final sentence'' of C.6.
         
         \item In C.7:
         % Clarify that $V_{\bm{c}}$ (viewed as a subvariety of $\PP^{m-1}$) has a canonical realization as a projective hypersurface (up to equivalence),
@@ -229,6 +298,23 @@ Thanks below are given in parentheses.
         Replace ``after viewing $V_{\bm{c}}$ as a projective hypersurface\dots'' with ``since $V_{\bm{c}}$ is a complete intersection in $\PP^{m-1}_k$''.
     \end{itemize}
     
+    \item Sentence before Appendix~III.C.3.1:
+    Replace ``as shown in the proof of Observation~C.6''
+    with ``by Theorem~P(1) and [Poo17, Corollary~7.5.21]''.
+    
+    \item Proposition~III.C.13, proof of second part (giving an alternative approach to Proposition~C.9(2) when $m=6$):
+    The $H^2$'s should be $H^4$'s,
+    and we should consider all eigenvalues on $H^4(X)$ to be safe (in case $H^4(\PP^4_k)\to H^4(X)$ fails to be injective).
+    
+    Then one should replace each of the three expressions $\tilde{\alpha}_1^?+\dots+\tilde{\alpha}_b^?$ with $\tilde{\alpha}_1^?+\dots+\tilde{\alpha}_b^?-1$.
+    The Dirichlet argument now gives $b=1$.
+    One then needs to prove that $\tilde{\alpha}_1 = 1$;
+    this can be done by appealing to Theorem~P(2).
+    (Alternatively, one might try using the $G_\QQ$-invariance of the multiset $\set{\tilde{\alpha}_1,\dots,\tilde{\alpha}_b}$ to obtain $\tilde{\alpha}_1\in \QQ$, i.e.~$\tilde{\alpha}_1^2 = 1$.
+    But without P(2), it seems hard to rule out the possibility that $\tilde{\alpha}_1 = -1$;
+    taking $r\equiv 1\bmod{2}$ large does not seem to help here.)
+    
+    Some of the references to C.6 should also be replaced by appropriate references to Theorem~P(1).
 \end{itemize}
 
 \end{document}
