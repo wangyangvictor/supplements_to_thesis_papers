@@ -94,22 +94,25 @@ Thanks below are given in parentheses.
     but it would be more canonical to say ``if $\bm{c}\in \ZZ^m$ and $p\nmid F^\vee(\bm{c})$, then $(\mcal{V}_{\bm{c}})_{\FF_p}$ is a smooth complete intersection in $\PP^{m-1}_{\FF_p}$ of dimension $m_\ast$ and multi-degree $(3,1)$''.
     
     \item Definition~I.1.11:
-    ``$\dim H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'' should be ``$\rank H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$''.
+    Replace ``$\dim H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'' (which should have been ``$\rank H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'')
+    with ``$\rank(H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)/H^{m_\ast}_\textnormal{sing}(\PP^{m-1}(\CC),\ZZ))$''.
+    
+    Then delete ``where $H^{m_\ast}_{\map{prim}}$\dots Betti\dots (\emph{primitive}\dots)''.
     % https://mathoverflow.net/questions/186378/when-did-betti-cohomology-come-to-be-used-the-way-it-is-today-and-how-is-it
     
     \item After Definition~I.1.11:
-    % Add a remark that ``in Definition~I.1.11, we use the embedding $V_{\bm{c}}\belongs \PP^{m-1}_\QQ$ to define $H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$''.
+    % Add a remark that ``in Definition~I.1.11, we use the embedding $V_{\bm{c}}\belongs \PP^{m-1}_\QQ$ to define $H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)/H^{m_\ast}_\textnormal{sing}(\PP^{m-1}(\CC),\ZZ)$''.
     Add a remark that
     (i) ``for each $\bm{c}$ above,
     $V_{\bm{c}}$ is a \emph{subvariety} of $\PP^{m-1}_\QQ$ by definition,
-    so $H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$ is well-defined'';
+    so $H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)/H^{m_\ast}_\textnormal{sing}(\PP^{m-1}(\CC),\ZZ)$ is well-defined'';
     and (ii) ``each $L_p(s,V_{\bm{c}})$ above is well-defined:
     for any $\bm{c},\bm{c}'\in \ZZ^m$ with $V_{\bm{c}}=V_{\bm{c}'}$,
     one can show that $E_{\bm{c}}(q) = E_{\bm{c}'}(q)$ holds for all prime powers $q$ coprime to $F^\vee(\bm{c})F^\vee(\bm{c}')$''.
     % Fancy proof in (ii): smooth proper base change; elementary proof: compare homogeneous ideals to show that $\bm{c}\in \QQ^\times \bm{c}'$, and then use the coprimality condition to show that $\bm{c}\in \ZZ_p^\times \bm{c}'$.
     
     (To avoid discussing (i)--(ii),
-    we could write $-\bm{1}_{2\mid m_\ast} + \rank H^{m_\ast}(V_{\bm{c}}\times\CC)$ in place of $\rank H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$,
+    we could write $-\bm{1}_{2\mid m_\ast} + \rank H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)$ in place of $\rank(\cdots/\cdots)$,
     and $L_p(s,\bm{c})$ in place of $L_p(s,V_{\bm{c}})$.
     But the current notation is more transparent and suggestive.)
     
@@ -117,7 +120,17 @@ Thanks below are given in parentheses.
     % understand Vaughan's work better... (read Vaughan 1986 and 2020).
 \end{itemize}
 
-% \subsection{Paper~II (\href{https://arxiv.org/abs/2108.03396v1}{\texttt{arXiv:2108.03396v1}})}
+\subsection{Paper~II (\href{https://arxiv.org/abs/2108.03396v1}{\texttt{arXiv:2108.03396v1}})}
+
+\begin{itemize}
+    \item Remark~II.1.20 and \S{II.5.2}:
+    Some (purely expository) comments are missing obvious hypotheses.
+    In 1.20, $I_{\bm{c}}(n)$ is only ``morally positive'' if $w\geq 0$.
+    In \S5.2, some of the comments only apply if $\sigma_{\infty,L^\perp,w}\neq 0$ (and in particular, $L\cap (\Supp{w})\neq \emptyset$).
+    
+    \item \S{II.5.2}:
+    Some of the $n$'s should be $q$'s.
+\end{itemize}
 
 \subsection{Paper~III (\href{https://arxiv.org/abs/2108.03398v1}{\texttt{arXiv:2108.03398v1}})}
 
@@ -200,10 +213,16 @@ Thanks below are given in parentheses.
     \end{theorem*}
     
     % \rmk{
-    % By [\href{https://arxiv.org/abs/0808.2169v1}{\texttt{arXiv:0808.2169v1}}, Proposition~3.2], we also have
+    % By [\href{https://arxiv.org/abs/0808.2169v1}{\texttt{arXiv:0808.2169v1}}, Proposition~3.2], one could add the following to Theorem~P:
     % (3) if $i = N$, then $\mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$;
     % and (4) if $0\leq i\leq N-1$, then $\mcal{E}^i_{\triangle}(X,\PP) = \emptyset$.
     % But we only need (1)--(2).
+    % }
+    
+    % \rmk{
+    % We only need Theorem~P when $X$ is a hyperplane section of $V$,
+    % in which case the result follows directly from \cite{skorobogatov1992exponential}*{Corollary~2.2}.
+    % But for the reader's convenience, we have stated the result generally.
     % }
     
     \pf{
@@ -289,6 +308,9 @@ Thanks below are given in parentheses.
         Replace ``$H^i(V_{\bm{c}})/H^i(\PP^{m-1}_k)\neq0$'' (both times)
         with ``$\dim H^{1+m_\ast}(V_{\bm{c}})\neq \dim H^{1+m_\ast}(\PP^{m_\ast}_k)$'',
         and justify this (the first time) using the new ``final sentence'' of C.6.
+        
+        And similarly, in Appendix~C.1.2, proof of Proposition~C.9(1):
+        Make similar changes, appealing to [Poo17, Corollary~7.5.21] and the new ``final sentence'' of C.6.
         
         \item In C.7:
         % Clarify that $V_{\bm{c}}$ (viewed as a subvariety of $\PP^{m-1}$) has a canonical realization as a projective hypersurface (up to equivalence),
