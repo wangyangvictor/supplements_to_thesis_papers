@@ -160,6 +160,12 @@ Thanks below are given in parentheses.
     \item Definition~III.3.11:
     Add ``And for all $p,j$, let $\tilde{\alpha}_{\bm{c},j}(p)\defeq \tilde{\alpha}_{M,j}(p)$, where $M\defeq H^{m_\ast}_{\map{prim}}(V_{\bm{c}})$''.
     
+    \item Conjecture~III.3.13~(EKL):
+    ``$\bm{c}+r\wh{\ZZ}$'' should be ``$\bm{c}+\map{rad}(n)r\wh{\ZZ}$''.
+    (Cf.~\S1.2, hypothesis~(4), ``modulus $O(p)\cdot \gcd(D(\bm{c})^{O(1)}, p^\infty)$''.)
+    
+    With this typo corrected, our \emph{applications} of (EKL)---all contained in \S\S7.2--7.3 and \S\S7.8--7.9---all remain correct as written.
+    
     \item \S{III.4.1}:
     Replace ``Definition~3.8'' (both times) with ``Definition~3.11''.
     
@@ -167,15 +173,19 @@ Thanks below are given in parentheses.
     Replace ``$n_0\leq Z^\hbar$'' (both times) with ``$n_0\leq Z^{\hbar^2}$'',
     and ``$n_0\geq Z^\hbar$'' with ``$n_0\geq Z^{\hbar^2}$''.
     Then in the derivation of (RA1'),
-    explicitly choose $\hbar\ls 1$ sufficiently small
-    so that in item~(2) in the second paragraph, we have $n_0^{O(1)}\leq Z^{\hbar/2}$.
+    explicitly choose $\hbar\ls 1$ small
+    so that in item~(2) in the second paragraph, $n_0^{O(1)}\leq Z^{\hbar/2}$.
     
     (These changes are important for \S10, but not for \S9.)
     
     One could also remark that \emph{morally}, when applying (RA1) here (towards (RA1')) and elsewhere (via (RA1'), (RA1'E), and (RA1'E')),
     it suffices to work with boxes $\mcal{B}(\bm{Z})$ of \emph{intermediate} ``lopsidedness'' (say $\leq Z/Z^{1-\hbar} = Z^\hbar$),
-    and with residue classes $\bm{a}\bmod{n_0}$ of \emph{small} modulus (say $\leq Z^{\hbar^2}$).
-    % (The other boxes and residue classes can be handled without (RA1).)
+    and with moduli $n_0$ and shifts $\abs{t}$ of \emph{small} size (say $\leq Z^{\hbar^2}$).
+    % (The other ranges can be handled without (RA1).)
+    
+    \item \S{III.7.9.3}, derivation of (RA1’E’L):
+    Explicitly cite (EKL) to justify the existence of all the $\wh{\ZZ}$-averages under consideration,
+    and furthermore to justify the ``constancy of $a'_{\bm{c}}(n_\star)$'' in observation~(2) on p.~57.
     
     \item Definition~III.C.2:
     Add ``projective'' before ``variety $Y/k$'',
@@ -198,15 +208,16 @@ Thanks below are given in parentheses.
     Also, the current notion of ``error-relevant'' is extrinsic (Katz),
     would be better termed ``non-planar'',
     and is not symmetric enough for us (given that $H^i(\PP^n_k)\to H^i(X)$, for $i\leq 2\dim{X}$, could presumably fail to be injective for some embedded projective variety $X\belongs \PP^n_k$).
-    
     To resolve these issues robustly and cleanly,
-    \emph{append} ``, and for each $i\geq 0$, let $\mcal{E}^i(Y)$ denote the multiset of (geometric) Frobenius eigenvalues on $H^i(Y)$'' to the \emph{second} sentence of C.2,
-    and \emph{replace} the \emph{third} with
-    ``Now fix a projective variety $X/k$,
-    let $\mcal{E}^i_{\triangle}(X,\PP)\defeq (\mcal{E}^i(X)\cup \mcal{E}^i(\PP^{\dim{X}}_k))\setminus (\mcal{E}^i(X)\cap \mcal{E}^i(\PP^{\dim{X}}_k))$ for $i\geq 0$
-    (so that if $\alpha\in \ol{\QQ}_\ell$ has multiplicities $j,l$ in $\mcal{E}^i(X),\mcal{E}^i(\PP^{\dim{X}}_k)$, then it has multiplicity $\abs{j-l}$ in $\mcal{E}^i_{\triangle}(X,\PP)$),
-    and let $\mcal{E}_{\triangle}(X,\PP)\defeq \bigsqcup_{i\geq 0}\mcal{E}^i_{\triangle}(X,\PP)$.''
-    
+    \begin{itemize}
+        \item \emph{append} ``, and for each $i\geq 0$, let $\mcal{E}^i(Y)$ denote the multiset of (geometric) Frobenius eigenvalues on $H^i(Y)$'' to the \emph{second} sentence of C.2,
+        and
+        \item \emph{replace} the \emph{third} with
+        ``Now fix a projective variety $X/k$,
+        let $\mcal{E}^i_{\triangle}(X,\PP)\defeq (\mcal{E}^i(X)\cup \mcal{E}^i(\PP^{\dim{X}}_k))\setminus (\mcal{E}^i(X)\cap \mcal{E}^i(\PP^{\dim{X}}_k))$ for $i\geq 0$
+        (so that if $\alpha\in \ol{\QQ}_\ell$ has multiplicities $j,l$ in $\mcal{E}^i(X),\mcal{E}^i(\PP^{\dim{X}}_k)$, then it has multiplicity $\abs{j-l}$ in $\mcal{E}^i_{\triangle}(X,\PP)$),
+        and let $\mcal{E}_{\triangle}(X,\PP)\defeq \bigsqcup_{i\geq 0}\mcal{E}^i_{\triangle}(X,\PP)$.''
+    \end{itemize}
     Then right after C.3, add the following theorem (and proof sketch).
     Below, we will refer to the theorem as ``Theorem~P''.
     \theoremstyle{plain}
