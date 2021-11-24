@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 
-\usepackage{amsmath,amssymb,amsthm,bm,colonequals,microtype}
+\usepackage{amsmath,amssymb,amsthm,bm,colonequals,microtype,xcolor}
 \usepackage{vywang}
 \usepackage{hyperref}
 
@@ -42,7 +42,7 @@ My thesis consists of three parts:
     (42 pages).
     
     This shows that Hooley's (and Heath-Brown's) hypotheses can be replaced with
-    a large sieve hypothesis a la Bombieri--Vinogradov.
+    a large-sieve hypothesis a la Bombieri--Vinogradov.
     
     \item Paper~II:
     \emph{Isolating special solutions in the delta method:
@@ -203,11 +203,11 @@ Thanks below are given in parentheses.
     and furthermore to justify the ``constancy of $a'_{\bm{c}}(n_\star)$'' in observation~(2) on p.~57.
     
     \item Definition~III.C.2:
-    Add ``projective'' before ``variety $Y/k$'',
+    \textcolor{gray}{Add ``projective'' before ``variety $Y/k$'',
     so that Remark~C.3 holds as written.
     % More generally, one could instead replace $H^\bullet$ (in C.2 and C.3) with $H_{c}^\bullet$.
     % Also, add ``embedded'' before ``projective variety $X\belongs \PP^n_k$''.
-    (Katz)
+    (Katz)}
     
     % \item Definitions~III.C.2 and~III.C.4, and proof of Observation~III.C.6:
     % Replace ``error-relevant'' with ``non-planar'' (more accurate and transparent).
@@ -225,15 +225,15 @@ Thanks below are given in parentheses.
     and is not symmetric enough for us (given that $H^i(\PP^n_k)\to H^i(X)$, for $i\leq 2\dim{X}$, could presumably fail to be injective for some embedded projective variety $X\belongs \PP^n_k$).
     To resolve these issues robustly and cleanly,
     \begin{itemize}
-        \item \emph{append} ``, and for each $i\geq 0$, let $\mcal{E}^i(Y)$ denote the multiset of (geometric) Frobenius eigenvalues on $H^i(Y)$'' to the \emph{second} sentence of C.2,
+        \item \textcolor{gray}{\emph{append} ``; and for each $i\geq 0$, let $\mcal{E}^i(Y)$ denote the multiset of (geometric) Frobenius eigenvalues on $H^i(Y)$'' to the \emph{second} sentence of C.2,}
         and
-        \item \emph{replace} the \emph{third} with
-        ``Now fix a projective variety $X/k$,
-        let $\mcal{E}^i_{\triangle}(X,\PP)\defeq (\mcal{E}^i(X)\cup \mcal{E}^i(\PP^{\dim{X}}_k))\setminus (\mcal{E}^i(X)\cap \mcal{E}^i(\PP^{\dim{X}}_k))$ for $i\geq 0$
-        (so that if $\alpha\in \ol{\QQ}_\ell$ has multiplicities $j,l$ in $\mcal{E}^i(X),\mcal{E}^i(\PP^{\dim{X}}_k)$, then it has multiplicity $\abs{j-l}$ in $\mcal{E}^i_{\triangle}(X,\PP)$),
-        and let $\mcal{E}_{\triangle}(X,\PP)\defeq \bigsqcup_{i\geq 0}\mcal{E}^i_{\triangle}(X,\PP)$.''
+        \item \textcolor{gray}{\emph{replace} the \emph{third} with
+        ``Now for a projective variety $X/k$ of dimension $N\geq 0$,
+        let $\mcal{E}^i_{\triangle}(X,\PP)\defeq (\mcal{E}^i(X)\cup \mcal{E}^i(\PP^N_k))\setminus (\mcal{E}^i(X)\cap \mcal{E}^i(\PP^N_k))$ for $i\geq 0$
+        (so that if $\alpha\in \ol{\QQ}_\ell$ has multiplicities $j_1,j_2\geq 0$ in $\mcal{E}^i(X),\mcal{E}^i(\PP^N_k)$, then it has multiplicity $\abs{j_1-j_2}$ in $\mcal{E}^i_{\triangle}(X,\PP)$),
+        and let $\mcal{E}_{\triangle}(X,\PP)\defeq \bigsqcup_{i\geq 0}\mcal{E}^i_{\triangle}(X,\PP)$.''}
     \end{itemize}
-    Then right after C.3, add the following theorem (and proof sketch).
+    Then \textcolor{gray}{right after C.3, add the following theorem (and proof sketch).}
     Below, we will refer to the theorem as ``Theorem~P''.
     \theoremstyle{plain}
     \newtheorem*{theorem*}{Theorem}
@@ -273,7 +273,7 @@ Thanks below are given in parentheses.
     Then $i\leq 2N$ by generic smoothness, so $\mcal{E}^i(\PP^{N}_k) = \set{q^{i/2}}$.
     
     It remains to show that $q^{i/2}\in \mcal{E}^i(X)$;
-    [\href{https://arxiv.org/abs/0808.2169v1}{\texttt{arXiv:0808.2169v1}}, first sentence of Remark~3.5] essentially states this without proof,\footnote{though (1), [Poo17, Corollary~7.5.21], and [\texttt{arXiv:0808.2169v1}, Theorem~2.4 or Skorobogatov (1992), after using a Veronese embedding]
+    [\href{https://arxiv.org/abs/0808.2169v1}{\texttt{arXiv:0808.2169v1}}, first sentence of Remark~3.5] essentially states this without proof,\footnote{though (1), [Poo17, Corollary~7.5.21], and [\texttt{arXiv:0808.2169v1}, Theorem~2.4 or Skorobogatov (1992), after a Veronese embedding]
     might allow for a proof by induction on $\codim{X}$,
     % (using the fact that $\dim\Sing$ decreases by at most $1$ for a hyperplane section (so that $\codim\Sing$ is weakly decreasing under taking hyperplane sections),
     % and the fact that projective complete intersections with $\codim\Sing \geq 2$ are always irreducible;
@@ -289,94 +289,96 @@ Thanks below are given in parentheses.
     But $i\geq N+1$ (since $D\geq 0$),
     so $\mcal{E}^i(Y) = \mcal{E}^i(\PP^{N}_k)$ (by (1) for $Y$).
     % (by weak Lefschetz and Poincar\'{e} duality).
-    Thus $\set{q^{i/2}} = \mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$, as desired.
+    Thus $\set{q^{i/2}} = \mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$.
     }
     
     Then do the following:
     \begin{itemize}
-        \item In C.4,
-        replace ``all of the error-relevant Frobenius eigenvalues on $H^\bullet(X)$'' with ``all $\alpha\in \mcal{E}_{\triangle}(X,\PP)$''.
+        \item \textcolor{gray}{In C.4,
+        replace ``all of the error-relevant Frobenius eigenvalues on $H^\bullet(X)$'' with ``all $\alpha\in \mcal{E}_{\triangle}(X,\PP)$''.}
     
-        \item In C.4 and C.6,
+        \item \textcolor{gray}{In C.4 and C.6,
         generalize ``projective hypersurface $X\belongs \PP^n_{\FF_q}$'' to ``projective complete intersection $X\belongs \PP^n_{\FF_q}$ with $\codim{X}\geq 1$''.
         % (for convenience).
+        }
         
-        \item In C.6:
-        Convert ``$\dim(\map{Sing}(X_{\ol{k}}))=0$'' to ``$\dim(\map{Sing}(X_{\ol{k}}))\leq 0$''.
+        \item \textcolor{gray}{In C.6:
+        Convert ``$\dim(\map{Sing}(X_{\ol{k}}))=0$'' to ``$\dim(\map{Sing}(X_{\ol{k}}))\leq 0$''.}
         
-        (Then make corresponding changes elsewhere.)
+        (Then \textcolor{gray}{make corresponding changes elsewhere.})
         
-        \item In C.6:
-        To be safe, replace the ``$18(3+\deg{X})^{n+1}$'' in (1) with ``$18(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$''.
+        \item \textcolor{gray}{In C.6:
+        To be safe, replace the ``$18(3+\deg{X})^{n+1}$'' in (1) with ``$18(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$''.}
         
-        (Then in Lemma~III.4.1, proof of (1),
+        (Then \textcolor{gray}{in Lemma~III.4.11, proof of (1),
         replace ``$18(3+3)^{m-1}$'' with ``$72(3+6)^m$'';
         in Problem~4.16,
         ``$18(3+k)^s$'' with ``$72(3+2k)^s$'';
         in 4.16 and 4.19,
-        ``$M_{d,m-1}$'' with ``$M_{d,m}$''.)
+        ``$M_{d,m-1}$'' with ``$M_{d,m}$''.})
         
-        \item In C.6 and its proof:
-        Replace ``$\PP^{n-1}(k_r)$'' (all three times) with ``$\PP^{\dim{X}}(k_r)$''.
+        \item \textcolor{gray}{In C.6 and its proof:
+        Replace ``$\PP^{n-1}(k_?)$'' (all three times) with ``$\PP^{\dim{X}}(k_?)$''.}
         
         \item In C.6, proof that (2) implies (1):
-        Replace ``$(n,1,\deg{X})$'' with ``$(n,\codim{X},\norm{\bm{d}}_\infty)$,
-        if $X$ has multi-degree $\bm{d}\in \ZZ_{\geq 1}^{\codim{X}}$;
-        here $\norm{\bm{d}}_\infty\leq d_1\cdots d_{\codim{X}} = \deg{X}$''.
+        \textcolor{gray}{Replace ``$(n,1,\deg{X})$'' with ``$(n,\codim{X},\norm{\bm{d}}_\infty)$,
+        if $X$ has multi-degree $\bm{d}$;
+        here $\norm{\bm{d}}_\infty\leq \prod_{i}d_i = \deg{X}$''.}
         
-        And explicitly state the LTF and Betti bounds involved.
+        And \textcolor{gray}{explicitly state the LTF and Betti bounds involved.
         % And explicitly state that
         % \mathd{
         % \abs{\#X(k_r)-\#\PP^{\dim{X}}(k_r)}\leq \card{k_r}^{(\dim{X})/2}
-        % \cdot \sum_{i}\sum_{Y\in \set{X, \PP^{\dim{X}}}}\dim H_i(Y)
+        % \cdot \sum_{i}\sum_{Y\in \set{X, \PP^{\dim{X}}}}\dim H^i(Y);
         % }
-        % and $\sum_{i}\dim H_i(Y)\leq 9(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$ for all $Y\in \set{X, \PP^{\dim{X}}}$.
+        % and if $Y\in \set{X, \PP^N}$, then $\sum_{i}\dim H^i(Y)\leq 9(3+\codim{X}\deg{X})^{n+1}2^{\codim{X}}$.
+        }
         
         \item In C.6, proof of equivalence of (2)--(3):
-        Replace ``the only error-relevant eigenvalues can come from\dots [through footnote~40]'' with ``the multiset $\set{\alpha\in \mcal{E}_{\triangle}(X,\PP): \map{weight}(\alpha)\geq 1+\dim{X}}$
-        is a sub-multiset of $\mcal{E}^{1+\dim{X}}(X)\setminus \mcal{E}^{1+\dim{X}}(\PP^{\dim{X}}_k)$ (by Theorem~P)''.
-        (Katz)
+        \textcolor{gray}{Replace ``the only error-relevant eigenvalues can come from\dots by the usual'' with ``the multiset $\set{\alpha\in \mcal{E}_{\triangle}(X,\PP): \map{weight}(\alpha)\geq 1+\dim{X}}$
+        is a sub-multiset of $\mcal{E}^{1+\dim{X}}(X)\setminus \mcal{E}^{1+\dim{X}}(\PP^{\dim{X}}_k)$ (by Theorem~P and Deligne's theory of weights). The equivalence of (2)--(3) now follows, by the usual''.
+        (Katz)}
         
-        And replace ``If $\dim{X}=1$\dots $\dim{X}\geq2$\dots \emph{with $\dim(\map{Sing}(X_{\ol{k}}))=0$}, so''
-        with ``Now assume $\dim{X}\geq 1$. Then the hypothesis $\dim(\map{Sing}(X_{\ol{k}}))\leq 0$ implies that''.
+        And \textcolor{gray}{replace ``If $\dim{X}=1$\dots $\dim{X}\geq2$\dots \emph{with $\dim(\map{Sing}(X_{\ol{k}}))=0$}, so''
+        with ``Now assume $\dim{X}\geq 1$. Then the hypothesis $\dim(\map{Sing}(X_{\ol{k}}))\leq 0$ implies that''.}
         
         \item At the end of C.6:
-        Add the sentence ``Furthermore, (1)--(3) hold \emph{if} $\dim H^{1+\dim{X}}(X) = \dim H^{1+\dim{X}}(\PP^{\dim{X}}_k)$.''
-        For proof, use Theorem~P.
+        \textcolor{gray}{Add the sentence ``Furthermore, (1)--(3) hold \emph{if} $\dim H^{1+\dim{X}}(X) = \dim H^{1+\dim{X}}(\PP^{\dim{X}}_k)$.''
+        For proof, use Theorem~P.}
         
         Then in Appendix~C.1.1, proof of Proposition~C.9(2):
-        Replace ``$H^i(V_{\bm{c}})/H^i(\PP^{m-1}_k)\neq0$'' (both times)
+        \textcolor{gray}{Replace ``$H^i(V_{\bm{c}})/H^i(\PP^{m-1}_k)\neq0$'' (both times)
         with ``$\dim H^{1+m_\ast}(V_{\bm{c}})\neq \dim H^{1+m_\ast}(\PP^{m_\ast}_k)$'',
-        and justify this (the first time) using the new ``final sentence'' of C.6.
+        and justify this (the first time) using the new ``final sentence'' of C.6.}
         
         And similarly, in Appendix~C.1.2, proof of Proposition~C.9(1):
-        Make similar changes, appealing to [Poo17, Corollary~7.5.21] and the new ``final sentence'' of C.6.
+        \textcolor{gray}{Make similar changes, appealing to [Poo17, Corollary~7.5.21] and the new ``final sentence'' of C.6.}
         
         \item In C.7:
         % Clarify that $V_{\bm{c}}$ (viewed as a subvariety of $\PP^{m-1}$) has a canonical realization as a projective hypersurface (up to equivalence),
         % depending only on $V_{\bm{c}}$.
         % (This is because if $V(F,\bm{c}\cdot\bm{x}) = V(F,\bm{c}'\cdot\bm{x})$, then $[\bm{c}] = [\bm{c}']$.)
         % Alternatively, just fix $\bm{c}$ and clarify that $\bm{c}$ determines a realization of $V_{\bm{c}}$ as a projective hypersurface (up to equivalence).
-        Replace ``after viewing $V_{\bm{c}}$ as a projective hypersurface\dots'' with ``since $V_{\bm{c}}$ is a complete intersection in $\PP^{m-1}_k$''.
+        \textcolor{gray}{Replace ``after viewing $V_{\bm{c}}$ as a projective hypersurface\dots'' with ``since $V_{\bm{c}}$ is a complete intersection in $\PP^{m-1}_k$''.}
     \end{itemize}
     
     \item Sentence before Appendix~III.C.3.1:
-    Replace ``as shown in the proof of Observation~C.6''
-    with ``by Theorem~P(1) and [Poo17, Corollary~7.5.21]''.
+    \textcolor{gray}{Replace ``as shown in the proof of Observation~C.6''
+    with ``by Theorem~P(1) and [Poo17, Corollary~7.5.21]''.}
     
     \item Proposition~III.C.13, proof of second part (giving an alternative approach to Proposition~C.9(2) when $m=6$):
-    The $H^2$'s should be $H^4$'s,
-    and we should consider all eigenvalues on $H^4(X)$ to be safe (in case $H^4(\PP^4_k)\to H^4(X)$ fails to be injective).
+    \textcolor{gray}{The $H^2$'s should be $H^4$'s,
+    and we should consider all eigenvalues on $H^4(X)$} to be safe (in case $H^4(\PP^4_k)\to H^4(X)$ fails to be injective).
     
-    Then one should replace each of the three expressions $\tilde{\alpha}_1^?+\dots+\tilde{\alpha}_b^?$ with $\tilde{\alpha}_1^?+\dots+\tilde{\alpha}_b^?-1$.
-    The Dirichlet argument now gives $b=1$.
-    One then needs to prove that $\tilde{\alpha}_1 = 1$;
-    this can be done by appealing to Theorem~P(2).
+    Then \textcolor{gray}{one should replace each of the three expressions $\tilde{\alpha}_1^?+\dots+\tilde{\alpha}_b^?$ with $\tilde{\alpha}_1^?+\dots+\tilde{\alpha}_b^?-1$.
+    The Dirichlet argument now gives $b=1$.}
+    One then needs to \textcolor{gray}{prove that $\tilde{\alpha}_1 = 1$;
+    this can be done by appealing to Theorem~P(2).}
     (Alternatively, one might try using the $G_\QQ$-invariance of the multiset $\set{\tilde{\alpha}_1,\dots,\tilde{\alpha}_b}$ to obtain $\tilde{\alpha}_1\in \QQ$, i.e.~$\tilde{\alpha}_1^2 = 1$.
     But without P(2), it seems hard to rule out the possibility that $\tilde{\alpha}_1 = -1$;
     taking $r\equiv 1\bmod{2}$ large does not seem to help here.)
     
-    Some of the references to C.6 should also be replaced by appropriate references to Theorem~P(1).
+    \textcolor{gray}{Some of the references to C.6 should also be replaced by appropriate references to Theorem~P(1).}
 \end{itemize}
 
 \end{document}
