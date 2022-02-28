@@ -5,21 +5,23 @@
 \usepackage{hyperref}
 
 % \title{Thesis outline}
-\title{Thesis outline, errata, and comments\thanks{The link \href{https://tinyurl.com/hooley33}{\nolinkurl{tinyurl.com/hooley33}} will always point to the latest version of this document.}}
+\title{Thesis outline, errata, and comments}
+% \thanks{The link \href{https://tinyurl.com/hooley33}{\nolinkurl{tinyurl.com/hooley33}} will always point to the latest version of this document.}}
 % \thanks{See \href{https://tinyurl.com/hooley33}{\nolinkurl{tinyurl.com/hooley33}} for the latest version of this document.}}
 % \author{Victor Wang}
-\author{Victor Wang\thanks{\emph{Email address}: \href{mailto:vywang@math.princeton.edu}{\nolinkurl{vywang@math.princeton.edu}}}}
+\author{Victor Wang}
+% \thanks{\emph{Email address}: \href{mailto:vywang@math.princeton.edu}{\nolinkurl{vywang@math.princeton.edu}}}}
 % \date{}
 \date{\today}
 
 \begin{document}
 
 \maketitle
-\tableofcontents
+% \tableofcontents
 
 \section{Thesis outline}
 
-(The page \href{https://wangyangvictor.github.io/thesis_links.html}{\nolinkurl{wangyangvictor.github.io/thesis_links.html}} has links to all relevant papers and drafts.
+(See \href{https://wangyangvictor.github.io/thesis_links.html}{\nolinkurl{wangyangvictor.github.io/thesis_links.html}} for individual links.
 Questions, comments, corrections, and suggestions are all welcome.)
 
 % Let $F(\bm{x})\colonequals x_1^3+x_2^3+\cdots+x_6^3$.
@@ -80,39 +82,39 @@ For now, all errata and comments refer to the versions of August 7, 2021:
     
     \item \href{https://arxiv.org/abs/2108.03398v1}{\texttt{arXiv:2108.03398v1}} for III.
 \end{enumerate}
-Thanks below are given in parentheses.
+Thanks below are given in parentheses; \textcolor{gray}{resolved issues} (fixed in later drafts, either released or to be released) are grayed out.
 
 \subsection{Paper~I (\href{https://arxiv.org/abs/2108.03395v1}{\texttt{arXiv:2108.03395v1}})}
 
 \begin{itemize}
     \item Paragraph after Definition~I.1.3:
-    It would be good to state Vaughan's record, of the form $N_F(X)\ll X^{7/2}/(\log{X})^c$.
+    \textcolor{gray}{It would be good to state Vaughan's record, of the form $N_F(X)\ll X^{7/2}/(\log{X})^c$.}
     (Wooley)
     
     \item Right after Definition~I.1.5:
-    Replace ``[Hoo86] observed several properties of the sums $S_{\bm{c}}(n)$,'' with ``The sums $S_{\bm{c}}(n)$ have some nice properties''.
+    \textcolor{gray}{Replace ``[Hoo86] observed several properties of the sums $S_{\bm{c}}(n)$,'' with ``The sums $S_{\bm{c}}(n)$ have some nice properties''.}
     (As was helpfully pointed out to me by Wooley, the properties are not \emph{due} to [Hoo86], but were rather \emph{employed} by [Hoo86] to great effect.)
     
     \item Paragraph before Definition~I.1.11:
-    This is OK,
-    but it would be more canonical to say ``if $\bm{c}\in \ZZ^m$ and $p\nmid F^\vee(\bm{c})$, then $(\mcal{V}_{\bm{c}})_{\FF_p}$ is a smooth complete intersection in $\PP^{m-1}_{\FF_p}$ of dimension $m_\ast$ and multi-degree $(3,1)$''.
+    \textcolor{gray}{This is OK,
+    but it would be more canonical to say ``if $\bm{c}\in \ZZ^m$ and $p\nmid F^\vee(\bm{c})$, then $(\mcal{V}_{\bm{c}})_{\FF_p}$ is a smooth complete intersection in $\PP^{m-1}_{\FF_p}$ of dimension $m_\ast$ and multi-degree $(3,1)$''.}
     
     \item Definition~I.1.11:
-    Replace ``$\dim H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'' (which should have been ``$\rank H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'')
-    with ``$\rank(H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)/H^{m_\ast}_\textnormal{sing}(\PP^{m-1}(\CC),\ZZ))$''.
+    \textcolor{gray}{Replace ``$\dim H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'' (which should have been ``$\rank H^{m_\ast}_{\map{prim}}(V_{\bm{c}}\times\CC)$'')
+    with ``$\rank(H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)/H^{m_\ast}_\textnormal{sing}(\PP^{m-1}(\CC),\ZZ))$''.}
     
-    Then delete ``where $H^{m_\ast}_{\map{prim}}$\dots Betti\dots (\emph{primitive}\dots)''.
+    Then \textcolor{gray}{delete ``where $H^{m_\ast}_{\map{prim}}$\dots Betti\dots (\emph{primitive}\dots)''.}
     % https://mathoverflow.net/questions/186378/when-did-betti-cohomology-come-to-be-used-the-way-it-is-today-and-how-is-it
     
     \item After Definition~I.1.11:
     % Add a remark that ``in Definition~I.1.11, we use the embedding $V_{\bm{c}}\belongs \PP^{m-1}_\QQ$ to define $H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)/H^{m_\ast}_\textnormal{sing}(\PP^{m-1}(\CC),\ZZ)$''.
-    Add a remark that
+    \textcolor{gray}{Add a remark that
     (i) ``for each $\bm{c}$ above,
     $V_{\bm{c}}$ is a \emph{subvariety} of $\PP^{m-1}_\QQ$ by definition,
     so $H^{m_\ast}_\textnormal{sing}(V_{\bm{c}}(\CC),\ZZ)/H^{m_\ast}_\textnormal{sing}(\PP^{m-1}(\CC),\ZZ)$ is well-defined'';
     and (ii) ``each $L_p(s,V_{\bm{c}})$ above is well-defined:
     for any $\bm{c},\bm{c}'\in \ZZ^m$ with $V_{\bm{c}}=V_{\bm{c}'}$,
-    one can show that $E_{\bm{c}}(q) = E_{\bm{c}'}(q)$ holds for all prime powers $q$ coprime to $F^\vee(\bm{c})F^\vee(\bm{c}')$''.
+    one can show that $E_{\bm{c}}(q) = E_{\bm{c}'}(q)$ holds for all prime powers $q$ coprime to $F^\vee(\bm{c})F^\vee(\bm{c}')$''.}
     % Fancy proof in (ii): smooth proper base change; elementary proof: compare homogeneous ideals to show that $\bm{c}\in \QQ^\times \bm{c}'$, and then use the coprimality condition to show that $\bm{c}\in \ZZ_p^\times \bm{c}'$.
     
     (To avoid discussing (i)--(ii),
@@ -121,9 +123,9 @@ Thanks below are given in parentheses.
     But the current notation is more transparent and suggestive.)
     
     \item \S{I.4}:
-    Since $F$ is diagonal, it might be more efficient to quote results from Vaughan's textbook (or old work of Hua) rather than [Hoo88, Hoo14] (Wooley),
-    though a little care is needed since Vaughan focuses on Waring's problem.
-    Furthermore, the case $m\in \set{4,6}$ (and essentially $m=5$ too) can be quoted from [HB98].
+    \textcolor{gray}{Since $F$ is diagonal, it might be more efficient to quote results from Vaughan's textbook (or old work of Hua) rather than [Hoo88, Hoo14]} (Wooley),
+    though \textcolor{gray}{a little care is needed since Vaughan focuses on Waring's problem}.
+    Furthermore, \textcolor{gray}{the case $m\in \set{4,6}$ (and essentially $m=5$ too) can be quoted} from [HB98].
     
     % \item On interpolation being the only known method for Hua bound:
     % understand Vaughan's work better... (read Vaughan 1986 and 2020).
@@ -204,10 +206,10 @@ Thanks below are given in parentheses.
     
     \item Definition~III.C.2:
     \textcolor{gray}{Add ``projective'' before ``variety $Y/k$'',
-    so that Remark~C.3 holds as written.
+    so that Remark~C.3 holds as written.}
     % More generally, one could instead replace $H^\bullet$ (in C.2 and C.3) with $H_{c}^\bullet$.
     % Also, add ``embedded'' before ``projective variety $X\belongs \PP^n_k$''.
-    (Katz)}
+    (Katz)
     
     % \item Definitions~III.C.2 and~III.C.4, and proof of Observation~III.C.6:
     % Replace ``error-relevant'' with ``non-planar'' (more accurate and transparent).
@@ -248,7 +250,7 @@ Thanks below are given in parentheses.
     \begin{enumerate}
         \item If $i\geq N+D+2$, then $\mcal{E}^i_{\triangle}(X,\PP) = \emptyset$.
         
-        \item If $i = N+D+1$ and $2\mid i$, then $\set{q^{i/2}} = \mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$.
+        \item If $i = N+D+1$, then $\mcal{E}^i(\PP^{N}_k)\belongs \mcal{E}^i(X)$.
     \end{enumerate}
     \end{theorem*}
     
@@ -269,8 +271,10 @@ Thanks below are given in parentheses.
     [Proof sketch]
     Claim~(1) follows from [Hoo91b, Katz's Appendix, assertion~(2) in the proof of Theorem~1].
     And if $D = -1$, then (2) follows from weak Lefschetz.
-    Now assume $D\geq 0$, let $i\defeq N+D+1$, and suppose $2\mid i$.
-    Then $i\leq 2N$ by generic smoothness, so $\mcal{E}^i(\PP^{N}_k) = \set{q^{i/2}}$.
+    Now assume $D\geq 0$, and let $i\defeq N+D+1$.
+    If $2\nmid i$, then $\mcal{E}^i(\PP^{N}_k) = \emptyset$, so (2) holds trivially.
+    Now suppose $2\mid i$.
+    Then $\mcal{E}^i(\PP^{N}_k) = \set{q^{i/2}}$, since $i\leq 2N$ by generic smoothness.
     
     It remains to show that $q^{i/2}\in \mcal{E}^i(X)$;
     [\href{https://arxiv.org/abs/0808.2169v1}{\texttt{arXiv:0808.2169v1}}, first sentence of Remark~3.5] essentially states this without proof,\footnote{though (1), [Poo17, Corollary~7.5.21], and [\texttt{arXiv:0808.2169v1}, Theorem~2.4 or Skorobogatov (1992), after a Veronese embedding]
@@ -336,8 +340,8 @@ Thanks below are given in parentheses.
         
         \item In C.6, proof of equivalence of (2)--(3):
         \textcolor{gray}{Replace ``the only error-relevant eigenvalues can come from\dots by the usual'' with ``the multiset $\set{\alpha\in \mcal{E}_{\triangle}(X,\PP): \map{weight}(\alpha)\geq 1+\dim{X}}$
-        is a sub-multiset of $\mcal{E}^{1+\dim{X}}(X)\setminus \mcal{E}^{1+\dim{X}}(\PP^{\dim{X}}_k)$ (by Theorem~P and Deligne's theory of weights). The equivalence of (2)--(3) now follows, by the usual''.
-        (Katz)}
+        is a sub-multiset of $\mcal{E}^{1+\dim{X}}(X)\setminus \mcal{E}^{1+\dim{X}}(\PP^{\dim{X}}_k)$ (by Theorem~P and Deligne's theory of weights). The equivalence of (2)--(3) now follows, by the usual''.}
+        (Katz)
         
         And \textcolor{gray}{replace ``If $\dim{X}=1$\dots $\dim{X}\geq2$\dots \emph{with $\dim(\map{Sing}(X_{\ol{k}}))=0$}, so''
         with ``Now assume $\dim{X}\geq 1$. Then the hypothesis $\dim(\map{Sing}(X_{\ol{k}}))\leq 0$ implies that''.}
